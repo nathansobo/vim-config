@@ -82,3 +82,7 @@
 	path = bundle/vim-irblack
 	url = https://github.com/wgibbs/vim-irblack.git
   ignore = dirty
+[submodule "bundle/emacs-bindings"]
+	path = bundle/emacs-bindings
+	url = git@github.com:maxbrunsfeld/vim-emacs-bindings.git
+  ignore = dirty
