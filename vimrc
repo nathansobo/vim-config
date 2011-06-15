@@ -168,11 +168,13 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
-" make uses real tabs
-au FileType make set noexpandtab
 
 "Allow the cursor to display plast the line one char
 set virtualedit=onemore
+
+" make the project drawer prettier
+let NERDTreeDirArrows=1
+let NERDTreeMinimalUI=1
 
 
 " ***** FILETYPES *****
@@ -187,9 +189,12 @@ autocmd BufRead,BufNewFile *.json set filetype=javascript
 autocmd BufRead,BufNewFile *.jasmine_fixture set filetype=html
 
 " highlight some other filetypes as ruby
-au BufRead,BufNewFile *.thor set filetype=ruby
-au BufRead,BufNewFile *.god set filetype=ruby
-au BufRead,BufNewFile Gemfile* set filetype=ruby
-au BufRead,BufNewFile Vagrantfile set filetype=ruby
-au BufRead,BufNewFile soloistrc set filetype=ruby
+autocmd BufRead,BufNewFile *.thor set filetype=ruby
+autocmd BufRead,BufNewFile *.god set filetype=ruby
+autocmd BufRead,BufNewFile Gemfile* set filetype=ruby
+autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
+autocmd BufRead,BufNewFile soloistrc set filetype=ruby
+
+" make uses real tabs
+autocmd FileType make set noexpandtab
 
