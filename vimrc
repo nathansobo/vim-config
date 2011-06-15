@@ -102,11 +102,11 @@ map \| :NERDTreeFind<CR>
 " macmenu File.New\ Tab key=<D-T>
 let g:CommandTMaxHeight=10
 map <leader>N :CommandT<CR>
-map <C-N> :CommandT<CR>
-imap <C-N> <Esc>:CommandT<CR>
+map <D-N> :CommandT<CR>
+imap <D-N> <Esc>:CommandT<CR>
 map <leader>B :CommandTBuffer<CR>
-map <C-B> :CommandTBuffer<CR>
-imap <C-B> <Esc>:CommandTBuffer<CR>
+map <D-B> :CommandTBuffer<CR>
+imap <D-B> <Esc>:CommandTBuffer<CR>
 
 " Open .vimrc file.  (Think Cmd-, [Preferences...] but with Shift.)
 map <D-<> :tabedit ~/.vimrc<CR>
