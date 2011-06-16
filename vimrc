@@ -61,6 +61,10 @@ xmap <silent> ie <Plug>CamelCaseMotion_ie
 inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-n>
 
+" poor man's 'widen selection' command so my rubymine muscle memory doesn't confuse me too much
+nmap <C-w> vie
+vmap <C-w> aw
+imap <C-w> <Esc>vie
 
 " ***** SEARCHING *****
 
@@ -138,6 +142,10 @@ map <leader>T :!rdoc -f tags -o tags * `rvm gemhome` --exclude=.git --exclude=lo
 
 
 " ***** APPEARANCE *****
+
+" folding
+set foldmethod=indent
+set nofoldenable
 
 " Show typed command prefixes while waiting for operator.
 set showcmd
