@@ -210,6 +210,7 @@ autocmd BufRead,BufNewFile Gemfile* set filetype=ruby
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 autocmd BufRead,BufNewFile soloistrc set filetype=ruby
 
-" make uses real tabs
+" make and git files use real tabs
 autocmd FileType make set noexpandtab
+autocmd BufRead,BufNewFile .git* set noexpandtab
 
