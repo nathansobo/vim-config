@@ -111,15 +111,15 @@ autocmd FocusLost * silent! wall
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
-" File tree browser - backslash
+" File tree browser 
+"  - backslash toggles
+"  - pipe shows current file
 map \ :NERDTreeToggle<CR>
-
-" File tree browser showing current file - pipe (shift-backslash)
 map \| :NERDTreeFind<CR>
+map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 
 " Command-T
-" macmenu File.New\ Tab key=<D-T>
 let g:CommandTMaxHeight=10
 map <leader>N :CommandT<CR>
 map <D-N> :CommandT<CR>
