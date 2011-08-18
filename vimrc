@@ -65,6 +65,10 @@ inoremap <M-Space> <C-n>
 " insert mode select word like textmate
 imap <C-w> <Esc>vib
 
+" Run == formatting on the entire file and return to original position
+noremap <Leader>= gg=G``
+
+
 " ***** SEARCHING *****
 
 set hlsearch
