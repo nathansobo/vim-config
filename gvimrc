@@ -1,4 +1,4 @@
-set guifont=Inconsolata:h18
+set guifont=Inconsolata:h20
 
 " Start without the toolbar
 set guioptions-=T

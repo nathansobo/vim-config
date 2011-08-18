@@ -22,6 +22,7 @@ noremap j gj
 noremap k gk
 
 " Tab, shift-tab to increase/decrease indentation
+imap <S-TAB> <C-o><S-TAB>
 nmap <TAB> >>
 nmap <S-TAB> <<
 vmap <TAB> >gv
@@ -61,10 +62,8 @@ xmap <silent> ie <Plug>CamelCaseMotion_ie
 inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-n>
 
-" poor man's 'widen selection' command so my rubymine muscle memory doesn't confuse me too much
-nmap <C-w> vie
-vmap <C-w> aw
-imap <C-w> <Esc>vie
+" insert mode select word like textmate
+imap <C-w> <Esc>vib
 
 " ***** SEARCHING *****
 
@@ -78,6 +77,7 @@ noremap  <Leader>/ :let @/ = ""<CR>
 
 " Command-Shift-F for Ack
 map <D-F> :Ack<space>
+vmap <D-F> :call AckVisual()<CR>
 
 " Ack current word in command mode
 function! AckCursor()
@@ -116,6 +116,7 @@ map \ :NERDTreeToggle<CR>
 
 " File tree browser showing current file - pipe (shift-backslash)
 map \| :NERDTreeFind<CR>
+let NERDTreeMinimalUI=1
 
 " Command-T
 " macmenu File.New\ Tab key=<D-T>
@@ -127,14 +128,14 @@ map <leader>B :CommandTBuffer<CR>
 map <D-B> :CommandTBuffer<CR>
 imap <D-B> <Esc>:CommandTBuffer<CR>
 
-" Open .vimrc file.  (Think Cmd-, [Preferences...] but with Shift.)
+" Open .vimrc file.  (Think Cmd , [Preferences...] but with Shift.)
 map <D-<> :tabedit ~/.vimrc<CR>
 
 " Copy current file path to system pasteboard.
 map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 
 " Easy access to the shell.
-map <Leader><Leader> :! 
+map <Leader><Leader> :!
 
 " run ctags again with gemhome added
 map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
@@ -195,10 +196,6 @@ set list listchars=tab:\ \ ,trail:·
 "Allow the cursor to display plast the line one char
 set virtualedit=onemore
 
-" make the project drawer prettier
-let NERDTreeDirArrows=1
-let NERDTreeMinimalUI=1
-
 
 " ***** FILETYPES *****
 
@@ -218,7 +215,15 @@ autocmd BufRead,BufNewFile Gemfile* set filetype=ruby
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 autocmd BufRead,BufNewFile soloistrc set filetype=ruby
 
+" highlight some other filetypes as ruby
+autocmd BufRead,BufNewFile *.txt set filetype=text
+autocmd BufRead,BufNewFile *.text set filetype=text
+autocmd BufRead,BufNewFile *README* set filetype=text
+
 " make and git files use real tabs
 autocmd FileType make set noexpandtab
 autocmd BufRead,BufNewFile .git* set noexpandtab
+
+" text files should autoindent, for writing outlines
+autocmd FileType text set autoindent
 
