@@ -59,6 +59,9 @@ omap <silent> ie <Plug>CamelCaseMotion_ie
 xmap <silent> ie <Plug>CamelCaseMotion_ie
 
 " autocomplete
+set complete=.,w,b
+set completeopt=preview
+set pumheight=6
 inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-n>
 
