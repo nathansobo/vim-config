@@ -8,6 +8,9 @@ call pathogen#helptags()
 " leader key for custom commands
 let mapleader=','
 
+" get out of insert mode w/ jk
+imap kj <Esc>
+
 " don't use the leader key as an escape sequence in insert mode
 set noesckeys
 

@@ -3,29 +3,29 @@ snippet f
 		${1}
 	}${2}
 snippet fp
-	function(${1}) {
+	function() {
 		${2}
 	}${3}
-snippet i
-	it("${1}", function() {
+snippet con
+	console.log(${1});
+snippet it
+	it("${1:does something}", function() {
 		${2}
 	});
 snippet de
-	describe("${1}", function() {
+	describe("${1:subject}", function() {
 		${2}
 	});
 snippet cont
-	context("${1}", function() {
+	context("${1:subject}", function() {
 		${2}
 	});
-snippet con
-	console.log(${1});
 snippet be
 	beforeEach(function() {
 		${1}
 	});
 snippet wf
-	waitsFor("${1}", function() {
+	waitsFor("${1:something to happen}", function() {
 		${2}
 	});
 snippet ex
