@@ -148,8 +148,10 @@ map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <Leader><Leader> :!
 
 " run ctags again with gemhome added
-map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
-map <leader>T :!rdoc -f tags -o tags * `rvm gemhome` --exclude=.git --exclude=log
+map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=log *<CR>
+map <leader>rT :!/usr/local/bin/ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
+noremap <D-]> :tnext<CR>
+noremap <D-[> :tprevious<CR>
 
 
 " ***** APPEARANCE *****
