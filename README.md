@@ -12,3 +12,10 @@
 As long as your checkout is kept clean, you can easily update, rebase your local changes and update submodules with:
 
     cd ~/.vim && git pull --rebase ; git submodule update ; cd -
+
+# Getting the newest versions of all submodules
+
+Run this from the main directory:
+
+    cd ~/.vim && git submodule foreach git pull origin master
+
