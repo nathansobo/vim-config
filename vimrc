@@ -25,7 +25,7 @@ noremap j gj
 noremap k gk
 
 " Tab, shift-tab to increase/decrease indentation
-imap <S-TAB> <C-o><S-TAB>
+imap <S-TAB> <C-o><<
 nmap <TAB> >>
 nmap <S-TAB> <<
 vmap <TAB> >gv
@@ -63,7 +63,7 @@ xmap <silent> ie <Plug>CamelCaseMotion_ie
 
 " autocomplete
 set complete=.,w,b
-set completeopt=preview
+set completeopt=menu
 set pumheight=6
 inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-n>
