@@ -1,9 +1,11 @@
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
 " use Pathogen for plugins
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 
-" ***** EDITTING *****
+" ***** EDITING *****
 
 filetype plugin indent on
 set nocompatible
