@@ -5,13 +5,16 @@ call pathogen#helptags()
 
 " ***** EDITTING *****
 
+filetype plugin indent on
+set nocompatible
+
 " leader key for custom commands
 let mapleader=','
 
 " get out of insert mode w/ jk
 imap kj <Esc>
 
-" don't use the leader key as an escape sequence in insert mode
+" don't allow bindings starting with escape in insert mode
 set noesckeys
 
 " make Y consistent w/ D and C
@@ -46,10 +49,6 @@ imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 map <D-d> yyP
 vmap <D-d> yP
 
-" Cut and paste lines
-map <D-c> yy
-map <D-x> dd
-
 " Camel case motion
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
@@ -83,7 +82,7 @@ set ignorecase
 set smartcase
 
 " <Leader>-/ to clear search highlighting
-noremap  <Leader>/ :let @/ = ""<CR>
+noremap  <Leader>/ :nohls<CR>
 
 " Command-Shift-F for Ack
 map <D-F> :Ack<space>
@@ -118,8 +117,10 @@ set autowriteall
 autocmd FocusLost * silent! wall
 
 " Directories for swp files
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
+if has('unix') || has('mac')
+  set backupdir=/tmp
+  set directory=/tmp
+end
 
 " File tree browser 
 "  - backslash toggles
@@ -156,6 +157,8 @@ noremap <D-[> :tprevious<CR>
 
 " ***** APPEARANCE *****
 
+syntax on
+
 " folding
 set foldmethod=indent
 set nofoldenable
@@ -168,10 +171,6 @@ set wildmode=list:longest
 
 " Start scrolling when the cursor is within 3 lines of the edge.
 set scrolloff=3
-
-set nocompatible
-filetype plugin indent on
-syntax on
 
 " Don't beep
 set visualbell
