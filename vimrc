@@ -67,8 +67,7 @@ set wildmode=list:longest
 inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-n>
 
-
-" Run == formatting on the entire file and return to original position
+" reindent the entire file and return to original position
 noremap <Leader>= gg=G``
 
 " get out of insert mode w/ jk
@@ -85,7 +84,7 @@ set ignorecase
 set smartcase
 
 " command-shift-F for ack - search in project
-map <D-F> :Ack<space>
+map <D-F> :Ack!<space>
 vmap <D-F> :call AckVisual()<CR>
 function! AckVisual()
   normal gv"xy
