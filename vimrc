@@ -88,7 +88,7 @@ map <D-F> :Ack!<space>
 vmap <D-F> :call AckVisual()<CR>
 function! AckVisual()
   normal gv"xy
-  let command = "ack ".@x
+  let command = "ack '".@x."'"
   cexpr system(command)
   cw
 endfunction
