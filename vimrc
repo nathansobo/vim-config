@@ -62,7 +62,7 @@ vmap <D-d> yP
 " autocomplete - insert and command modes
 set complete=.,w,b
 set pumheight=6
-set completeopt=menu,longest
+set completeopt=menu
 set wildmode=list:longest
 inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-n>
