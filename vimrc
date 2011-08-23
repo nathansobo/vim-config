@@ -124,6 +124,7 @@ map \ :NERDTreeToggle<CR>
 map \| :NERDTreeFind<CR>
 map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
 
 " command-T - open files with fuzzy matching
 let g:CommandTMaxHeight=10
@@ -178,8 +179,8 @@ set ruler
 " Show (partial) command in the status line
 set showcmd
 
-" Highlight current row.
-set cursorline
+" don't highlight current row.
+set nocursorline
 
 " Don't hard wrap long lines
 set nowrap
