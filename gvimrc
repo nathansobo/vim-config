@@ -3,6 +3,8 @@ set guifont=Monaco:h17
 
 " Start without the toolbar
 set guioptions-=T
+set guioptions-=L
+set guioptions-=r
 
 " Full size window
 set columns=999
