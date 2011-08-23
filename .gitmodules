@@ -72,7 +72,7 @@
 	ignore = dirty
 [submodule "bundle/emacs-bindings"]
 	path = bundle/emacs-bindings
-	url = git@github.com:maxbrunsfeld/vim-emacs-bindings.git
+	url = https://github.com/maxbrunsfeld/vim-emacs-bindings.git
 	ignore = dirty
 [submodule "bundle/javascript"]
 	path = bundle/javascript
