@@ -73,6 +73,10 @@ noremap <Leader>= gg=G``
 " get out of insert mode w/ jk
 imap kj <Esc>
 
+" query replace
+nnoremap <D-r> :%s//gc<Left><Left><Left>
+vnoremap <D-r> :s//gc<Left><Left><Left>
+
 
 "-------------------------------------------
 "                SEARCHING
@@ -144,9 +148,11 @@ map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 " easy access to the shell.
 map <Leader><Leader> :!
 
-" run ctags again with gemhome added
+" run ctags, with or without gemhome included
 map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=log *<CR>
 map <leader>rT :!/usr/local/bin/ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
+
+" next and previous tag
 noremap <D-]> :tnext<CR>
 noremap <D-[> :tprevious<CR>
 
