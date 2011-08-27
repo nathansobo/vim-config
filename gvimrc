@@ -1,5 +1,7 @@
-set guifont=Monaco:h17
 " set guifont=Inconsolata:h20
+set guifont=Monaco:h17
+set bg=dark
+colorscheme solarized
 
 " Start without the toolbar
 set guioptions-=T
