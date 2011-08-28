@@ -115,7 +115,7 @@ set autoread
 set autowriteall
 autocmd FocusLost * silent! wall
 
-" Directories for swp files
+" directory for swp files
 if has('unix') || has('mac')
   set backupdir=/tmp
   set directory=/tmp
