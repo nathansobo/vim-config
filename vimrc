@@ -129,6 +129,7 @@ map \| :NERDTreeFind<CR>
 map <Leader>n :NERDTreeToggle<CR>
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeDirArrows=1
+let g:NERDTreeChDirMode=2
 
 " command-T - open files with fuzzy matching
 let g:CommandTMaxHeight=10
