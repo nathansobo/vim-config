@@ -65,7 +65,7 @@ set pumheight=6
 set completeopt=menu
 set wildmode=list:longest
 inoremap <C-Space> <C-n>
-inoremap <M-Space> <C-n>
+inoremap <M-Space> <C-p>
 
 " reindent the entire file and return to original position
 noremap <Leader>= gg=G``
@@ -229,7 +229,7 @@ autocmd BufRead,BufNewFile Gemfile* set filetype=ruby
 autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
 autocmd BufRead,BufNewFile soloistrc set filetype=ruby
 
-" plain text 
+" plain text
 autocmd BufRead,BufNewFile *.txt set filetype=text
 autocmd BufRead,BufNewFile *.text set filetype=text
 autocmd BufRead,BufNewFile *README* set filetype=text
