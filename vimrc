@@ -23,11 +23,6 @@ set tildeop
 noremap j gj
 noremap k gk
 
-" when moving by word, respect camel case and underscore boundaries
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-
 " make Y consistent w/ D and C
 map Y y$
 
