@@ -44,11 +44,10 @@ let NERDSpaceDelims = 1
 map <D-/> <plug>NERDCommenterToggle<CR>
 imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 
-" autocomplete
-"  - command mode - like bash
+" command mode autocomplete - like bash
 set wildmode=list:longest
 
-"  - insert mode - menu, just from open buffers
+" insert mode autocomplete - menu, only from open buffers
 set complete=.,w,b
 set pumheight=6
 set completeopt=menu
@@ -57,9 +56,6 @@ inoremap <M-Space> <C-p>
 
 " reindent the entire file and return to original position
 noremap <Leader>= gg=G``
-
-" get out of insert mode w/ jk
-imap kj <Esc>
 
 " query replace
 nnoremap <D-r> :%s//gc<Left><Left><Left>
@@ -75,6 +71,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+" <leader>-/ to clear search highlighting
+noremap  <Leader>/ :nohlsearch<CR>
+
 " command-shift-F for ack - search in project
 map <D-F> :Ack!<space>
 vmap <D-F> :call AckVisual()<CR>
@@ -85,9 +84,6 @@ function! AckVisual()
   cw
 endfunction
 
-" <leader>-/ to clear search highlighting
-noremap  <Leader>/ :nohls<CR>
-
 
 "-------------------------------------------
 "               BUFFERS/FILES
@@ -96,7 +92,7 @@ noremap  <Leader>/ :nohls<CR>
 " let unsaved buffers exist in the background.
 set hidden
 
-" don't prompt for file changes outside MacVim
+" don't prompt for file changes outside vim
 set autoread
 
 " autosave when changing buffers or losing focus.
