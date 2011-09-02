@@ -28,8 +28,6 @@ map Y y$
 
 " increase/decrease indentation
 imap <S-TAB> <C-o><<
-nmap <TAB> >>
-nmap <S-TAB> <<
 vmap <TAB> >gv
 vmap <S-TAB> <gv
 
