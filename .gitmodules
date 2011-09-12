@@ -78,7 +78,3 @@
 	path = bundle/javascript
 	url = git://github.com/pangloss/vim-javascript.git
 	ignore = dirty
-[submodule "bundle/camelcasemotion"]
-	path = bundle/camelcasemotion
-	url = https://github.com/vim-scripts/camelcasemotion.git
-	ignore = dirty

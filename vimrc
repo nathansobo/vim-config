@@ -59,6 +59,8 @@ noremap <Leader>= gg=G``
 nnoremap <D-r> :%s//gc<Left><Left><Left>
 vnoremap <D-r> :s//gc<Left><Left><Left>
 
+" remove any mappings in select mode
+" smapclear
 
 "-------------------------------------------
 "                SEARCHING
