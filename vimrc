@@ -124,8 +124,8 @@ imap <D-B> <Esc>:CommandTBuffer<CR>
 map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 
 " run ctags, with or without gemhome included
-map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=log *<CR>
-map <leader>rT :!/usr/local/bin/ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
+map <leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
+map <leader>rT :!ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
 
 
 "-------------------------------------------
