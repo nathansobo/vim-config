@@ -55,12 +55,8 @@ inoremap <M-Space> <C-p>
 " reindent the entire file and return to original position
 noremap <Leader>= gg=G``
 
-" query replace
-nnoremap <D-r> :%s//gc<Left><Left><Left>
-vnoremap <D-r> :s//gc<Left><Left><Left>
-
 " remove any mappings in select mode
-" smapclear
+smapclear
 
 "-------------------------------------------
 "                SEARCHING
