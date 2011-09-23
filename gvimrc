@@ -1,5 +1,4 @@
-" set guifont=Inconsolata:h20
-set guifont=Monaco:h17
+set guifont=Monaco:h16
 set bg=dark
 colorscheme solarized
 
