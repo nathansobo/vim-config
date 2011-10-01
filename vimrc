@@ -47,7 +47,7 @@ set wildmode=list:longest
 
 " insert mode autocomplete - menu, only from open buffers
 set complete=.,w,b
-set pumheight=6
+set pumheight=10
 set completeopt=menu
 inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-p>
@@ -64,7 +64,7 @@ smapclear
 
 set hlsearch
 set incsearch
-set ignorecase
+set noignorecase
 set smartcase
 
 " <leader>-/ to clear search highlighting
@@ -156,8 +156,8 @@ set ruler
 " show (partial) command in the status line
 set showcmd
 
-" don't highlight current row.
-set nocursorline
+" highlight current row.
+set cursorline
 
 " don't hard wrap long lines
 set nowrap
