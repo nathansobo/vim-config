@@ -209,3 +209,11 @@ autocmd BufRead,BufNewFile *README* set filetype=text
 autocmd FileType make set noexpandtab
 autocmd BufRead,BufNewFile .git* set noexpandtab
 
+"-------------------------------------------
+"                 LOCAL CONFIG
+"-------------------------------------------
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
