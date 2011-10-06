@@ -1,6 +1,6 @@
 set guifont=Monaco:h16
 set bg=dark
-colorscheme solarized
+colorscheme ir_black
 
 " Start without the toolbar
 set guioptions-=T
