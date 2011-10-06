@@ -120,6 +120,9 @@ map <leader>B :CommandTBuffer<CR>
 map <D-B> :CommandTBuffer<CR>
 imap <D-B> <Esc>:CommandTBuffer<CR>
 
+imap <D-E> :MRU<CR>
+map <D-E> :MRU<CR>
+
 " copy current file path to system pasteboard.
 map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 
