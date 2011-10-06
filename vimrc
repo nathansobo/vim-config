@@ -47,7 +47,7 @@ set wildmode=list:longest
 
 " insert mode autocomplete - menu, only from open buffers
 set complete=.,w,b
-set pumheight=6
+set pumheight=10
 set completeopt=menu
 inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-p>
@@ -64,11 +64,11 @@ smapclear
 
 set hlsearch
 set incsearch
-set ignorecase
+set noignorecase
 set smartcase
 
-" <leader>-/ to clear search highlighting
-noremap  <Leader>/ :nohlsearch<CR>
+" control-l clears both the command line and search highlighting
+noremap <C-l> :nohlsearch<CR><C-l>
 
 " command-shift-F for ack - search in project
 map <D-F> :Ack!<space>
@@ -159,8 +159,8 @@ set ruler
 " show (partial) command in the status line
 set showcmd
 
-" don't highlight current row.
-set nocursorline
+" highlight current row.
+set cursorline
 
 " don't hard wrap long lines
 set nowrap
@@ -211,4 +211,12 @@ autocmd BufRead,BufNewFile *README* set filetype=text
 " make and git files use real tabs
 autocmd FileType make set noexpandtab
 autocmd BufRead,BufNewFile .git* set noexpandtab
+
+"-------------------------------------------
+"                 LOCAL CONFIG
+"-------------------------------------------
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
 
