@@ -64,7 +64,7 @@ smapclear
 
 set hlsearch
 set incsearch
-set noignorecase
+set ignorecase
 set smartcase
 
 " control-l clears both the command line and search highlighting
@@ -75,11 +75,8 @@ map <D-F> :Ack!<space>
 vmap <D-F> :call AckVisual()<CR>
 function! AckVisual()
   normal gv"xy
-  let command = "ack '".@x."'"
-  cexpr system(command)
-  cw
+  exec "Ack! '" . @x . "'"
 endfunction
-
 
 "-------------------------------------------
 "               BUFFERS/FILES
