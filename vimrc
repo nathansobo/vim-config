@@ -75,8 +75,7 @@ noremap <leader>/ :nohlsearch<CR><C-l>
 map <D-F> :Ack!<space>
 vmap <D-F> :call AckVisual()<CR>
 function! AckVisual()
-  normal gv"xy
-  exec "Ack! '" . @x . "'"
+  exec "Ack! '" . g:get_current_visual_selection() . "'"
 endfunction
 
 "-------------------------------------------
@@ -206,6 +205,19 @@ autocmd BufRead,BufNewFile *README* set filetype=text
 " make and git files use real tabs
 autocmd FileType make set noexpandtab
 autocmd BufRead,BufNewFile .git* set noexpandtab
+
+
+"-------------------------------------------
+"                 FUNCTIONS
+"-------------------------------------------
+function! g:get_current_visual_selection()
+  let reg_save = @x
+  normal! gv"xy
+  let selection = @x
+  let @x = reg_save
+  return selection
+endfunction
+
 
 "-------------------------------------------
 "                 LOCAL CONFIG
