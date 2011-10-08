@@ -67,8 +67,9 @@ set incsearch
 set ignorecase
 set smartcase
 
-" control-l clears both the command line and search highlighting
-noremap <C-l> :nohlsearch<CR><C-l>
+" clears the command line and search highlighting
+noremap <C-l>     :nohlsearch<CR><C-l>
+noremap <leader>/ :nohlsearch<CR><C-l>
 
 " command-shift-F for ack - search in project
 map <D-F> :Ack!<space>
