@@ -1,4 +1,4 @@
-set guifont=Monaco:h16
+set guifont=Monaco:h15
 set bg=dark
 colorscheme solarized
 
