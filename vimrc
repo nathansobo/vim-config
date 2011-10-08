@@ -72,11 +72,9 @@ noremap <C-l>     :nohlsearch<CR><C-l>
 noremap <leader>/ :nohlsearch<CR><C-l>
 
 " command-shift-F for ack - search in project
-map <D-F> :Ack!<space>
-vmap <D-F> :call AckVisual()<CR>
-function! AckVisual()
-  exec "Ack! '" . g:get_current_visual_selection() . "'"
-endfunction
+noremap  <D-F> :Ack!<space>
+vnoremap <D-F> :<C-w>exec "Ack! '" . GetCurrentVisualSelection() . "'"<CR>
+
 
 "-------------------------------------------
 "               BUFFERS/FILES
@@ -127,8 +125,8 @@ map <leader>rT :!ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
 " jump to a tag in a window to the right.
 nnoremap <C-w><C-]> :exec "vertical belowright stag" expand("<cword>")<CR>
 nnoremap <C-w>g<C-]> :exec "vertical belowright stselect" expand("<cword>")<CR>
-vnoremap <C-w><C-]> :<C-w>exec "vertical belowright stag" g:get_current_visual_selection()<CR>
-vnoremap <C-w>g<C-]> :<C-w>exec "vertical belowright stselect" g:get_current_visual_selection()<CR>
+vnoremap <C-w><C-]> :<C-w>exec "vertical belowright stag" GetCurrentVisualSelection()<CR>
+vnoremap <C-w>g<C-]> :<C-w>exec "vertical belowright stselect" GetCurrentVisualSelection()<CR>
 
 
 "-------------------------------------------
@@ -216,7 +214,7 @@ autocmd BufRead,BufNewFile .git* set noexpandtab
 "-------------------------------------------
 "                 FUNCTIONS
 "-------------------------------------------
-function! g:get_current_visual_selection()
+function! GetCurrentVisualSelection()
   let reg_save = @x
   normal! gv"xy
   let selection = @x
