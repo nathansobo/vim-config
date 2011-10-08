@@ -124,6 +124,12 @@ map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
 map <leader>rT :!ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
 
+" jump to a tag in a window to the right.
+nnoremap <C-w><C-]> :exec "vertical belowright stag" expand("<cword>")<CR>
+nnoremap <C-w>g<C-]> :exec "vertical belowright stselect" expand("<cword>")<CR>
+vnoremap <C-w><C-]> :<C-w>exec "vertical belowright stag" g:get_current_visual_selection()<CR>
+vnoremap <C-w>g<C-]> :<C-w>exec "vertical belowright stselect" g:get_current_visual_selection()<CR>
+
 
 "-------------------------------------------
 "                 APPEARANCE
