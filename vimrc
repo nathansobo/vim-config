@@ -2,7 +2,6 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-
 "-------------------------------------------
 "                 EDITING
 "-------------------------------------------
@@ -16,9 +15,6 @@ let mapleader=','
 " don't allow bindings starting with escape in insert mode
 set noesckeys
 
-" let tilde (toggle case) behave like an operator
-set tildeop
-
 " move up and down within wrapped lines
 noremap j gj
 noremap k gk
@@ -27,7 +23,6 @@ noremap k gk
 map Y y$
 
 " increase/decrease indentation
-imap <S-TAB> <C-o><<
 vmap <TAB> >gv
 vmap <S-TAB> <gv
 
@@ -55,9 +50,6 @@ inoremap <M-Space> <C-p>
 " reindent the entire file and return to original position
 noremap <Leader>= gg=G``
 
-" remove any mappings in select mode
-smapclear
-
 "-------------------------------------------
 "                SEARCHING
 "-------------------------------------------
@@ -74,7 +66,6 @@ noremap <leader>/ :nohlsearch<CR><C-l>
 " command-shift-F for ack - search in project
 noremap  <D-F> :Ack!<space>
 vnoremap <D-F> :<C-w>exec "Ack! '" . GetCurrentVisualSelection() . "'"<CR>
-
 
 "-------------------------------------------
 "               BUFFERS/FILES
@@ -123,11 +114,10 @@ map <leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
 map <leader>rT :!ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
 
 " jump to a tag in a window to the right.
-nnoremap <C-w><C-]> :exec "vertical belowright stag" expand("<cword>")<CR>
-nnoremap <C-w>g<C-]> :exec "vertical belowright stselect" expand("<cword>")<CR>
-vnoremap <C-w><C-]> :<C-w>exec "vertical belowright stag" GetCurrentVisualSelection()<CR>
+nnoremap <C-w><C-]>  :exec      "vertical belowright stag" expand("<cword>")<CR>
+nnoremap <C-w>g<C-]> :exec      "vertical belowright stselect" expand("<cword>")<CR>
+vnoremap <C-w><C-]>  :<C-w>exec "vertical belowright stag" GetCurrentVisualSelection()<CR>
 vnoremap <C-w>g<C-]> :<C-w>exec "vertical belowright stselect" GetCurrentVisualSelection()<CR>
-
 
 "-------------------------------------------
 "                 APPEARANCE
@@ -177,7 +167,6 @@ set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
-
 "-------------------------------------------
 "                 FILETYPES
 "-------------------------------------------
@@ -210,7 +199,6 @@ autocmd BufRead,BufNewFile *README* set filetype=text
 autocmd FileType make set noexpandtab
 autocmd BufRead,BufNewFile .git* set noexpandtab
 
-
 "-------------------------------------------
 "                 FUNCTIONS
 "-------------------------------------------
@@ -221,7 +209,6 @@ function! GetCurrentVisualSelection()
   let @x = reg_save
   return selection
 endfunction
-
 
 "-------------------------------------------
 "                 LOCAL CONFIG
