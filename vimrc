@@ -35,6 +35,7 @@ vmap <C-Down> ]egv
 " command-/ to toggle comments
 let NERDSpaceDelims = 1
 map <D-/> <plug>NERDCommenterToggle<CR>
+xmap <D-/> <plug>NERDCommenterToggle<CR>gv
 imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 
 " command mode autocomplete - like bash
