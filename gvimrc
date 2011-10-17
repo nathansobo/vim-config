@@ -11,6 +11,9 @@ set guioptions-=r
 set columns=999
 set lines=999
 
+" highlight current row.
+set cursorline
+
 " *** MACVIM ONLY ***
 if has("gui_macvim")
 

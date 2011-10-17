@@ -148,9 +148,6 @@ set ruler
 " show (partial) command in the status line
 set showcmd
 
-" highlight current row.
-set cursorline
-
 " don't hard wrap long lines
 set nowrap
 set textwidth=0
@@ -203,6 +200,7 @@ autocmd BufRead,BufNewFile .git* set noexpandtab
 "-------------------------------------------
 "                 FUNCTIONS
 "-------------------------------------------
+
 function! GetCurrentVisualSelection()
   let reg_save = @x
   normal! gv"xy
