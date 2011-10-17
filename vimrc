@@ -26,12 +26,6 @@ map Y y$
 vmap <TAB> >gv
 vmap <S-TAB> <gv
 
-" bubble lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
 " command-/ to toggle comments
 let NERDSpaceDelims = 1
 map <D-/> <plug>NERDCommenterToggle<CR>
