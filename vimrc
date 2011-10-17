@@ -23,8 +23,8 @@ noremap k gk
 map Y y$
 
 " increase/decrease indentation
-vmap <TAB> >gv
-vmap <S-TAB> <gv
+xmap <TAB> >gv
+xmap <S-TAB> <gv
 
 " command-/ to toggle comments
 let NERDSpaceDelims = 1
