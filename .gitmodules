@@ -78,3 +78,6 @@
 	path = bundle/javascript
 	url = git://github.com/pangloss/vim-javascript.git
 	ignore = dirty
+[submodule "bundle/abolish"]
+	path = bundle/abolish
+	url = https://github.com/tpope/vim-abolish.git
