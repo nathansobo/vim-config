@@ -43,9 +43,6 @@ set completeopt=menu
 inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-p>
 
-" reindent the entire file and return to original position
-noremap <Leader>= gg=G``
-
 "-------------------------------------------
 "                SEARCHING
 "-------------------------------------------
