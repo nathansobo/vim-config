@@ -27,10 +27,6 @@ xmap <TAB> >gv
 xmap <S-TAB> <gv
 
 " command-/ to toggle comments
-let NERDSpaceDelims = 1
-map <D-/> <plug>NERDCommenterToggle<CR>
-xmap <D-/> <plug>NERDCommenterToggle<CR>gv
-imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 
 " command mode autocomplete - like bash
 set wildmode=list:longest
