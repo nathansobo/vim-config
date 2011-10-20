@@ -26,7 +26,12 @@ map Y y$
 xmap <TAB> >gv
 xmap <S-TAB> <gv
 
-" command-/ to toggle comments
+" toggle comments - command-/ or <leader>c for operator
+nmap <D-/> <plug>CommentaryLine
+xmap <D-/> <plug>Commentarygv
+imap <D-/> <C-o><plug>CommentaryLine
+map <leader>c <plug>Commentary
+nmap <leader>cc <plug>CommentaryLine
 
 " command mode autocomplete - like bash
 set wildmode=list:longest
