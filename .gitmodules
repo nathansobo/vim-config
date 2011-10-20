@@ -80,6 +80,8 @@
 [submodule "bundle/commentary"]
 	path = bundle/commentary
 	url = https://github.com/tpope/vim-commentary.git
+	ignore = dirty
 [submodule "bundle/indent-object"]
 	path = bundle/indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git
+	ignore = dirty
