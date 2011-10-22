@@ -110,7 +110,7 @@ map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <leader>rt :!ctags -R --exclude=.git --exclude=log *<CR>
 map <leader>rT :!ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
 
-" jump to a tag in vertical split. ('control-w ]' already does horizontal)
+" jump to a tag in vertical split. ('control-w ]' already does this with a horizontal split)
 nnoremap <C-w><C-]>  :exec      "vertical belowright stag" expand("<cword>")<CR>
 nnoremap <C-w>g<C-]> :exec      "vertical belowright stselect" expand("<cword>")<CR>
 vnoremap <C-w><C-]>  :<C-w>exec "vertical belowright stag" GetCurrentVisualSelection()<CR>
