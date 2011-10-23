@@ -85,3 +85,7 @@
 	path = bundle/indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git
 	ignore = dirty
+[submodule "bundle/yankstack"]
+	path = bundle/yankstack
+	url = https://github.com/maxbrunsfeld/vim-yankstack.git
+	ignore = dirty
