@@ -1,4 +1,4 @@
-set guifont=Monaco:h16
+set guifont=Monaco:h15
 set bg=dark
 colorscheme ir_black
 
@@ -10,6 +10,9 @@ set guioptions-=r
 " Full size window
 set columns=999
 set lines=999
+
+" highlight current row.
+set cursorline
 
 " *** MACVIM ONLY ***
 if has("gui_macvim")
