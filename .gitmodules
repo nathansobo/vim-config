@@ -89,3 +89,6 @@
 	path = bundle/yankstack
 	url = https://github.com/maxbrunsfeld/vim-yankstack.git
 	ignore = dirty
+[submodule "bundle/align"]
+	path = bundle/align
+	url = https://github.com/tsaleh/vim-align.git
