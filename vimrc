@@ -1,4 +1,6 @@
 " use pathogen for plugins
+set nocompatible
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -8,7 +10,6 @@ call pathogen#helptags()
 
 filetype plugin indent on
 syntax on
-set nocompatible
 
 " searching
 set hlsearch
@@ -89,7 +90,7 @@ noremap j gj
 noremap k gk
 
 " make Y consistent w/ D and C
-map Y y$
+nmap Y y$
 
 " increase/decrease indentation
 xmap <TAB> >gv
