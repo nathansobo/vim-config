@@ -24,3 +24,11 @@ if has("gui_macvim")
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 endif
 
+"-------------------------------------------
+"                 LOCAL CONFIG
+"-------------------------------------------
+
+if filereadable(expand("~/.gvimrc.local"))
+  source ~/.gvimrc.local
+endif
+

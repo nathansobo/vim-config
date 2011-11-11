@@ -1,4 +1,6 @@
 " use pathogen for plugins
+set nocompatible
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -8,7 +10,6 @@ call pathogen#helptags()
 
 filetype plugin indent on
 syntax on
-set nocompatible
 
 " searching
 set hlsearch
@@ -89,7 +90,7 @@ noremap j gj
 noremap k gk
 
 " make Y consistent w/ D and C
-map Y y$
+nmap Y y$
 
 " increase/decrease indentation
 xmap <TAB> >gv
@@ -186,6 +187,48 @@ function! GetCurrentVisualSelection()
   let selection = @x
   let @x = reg_save
   return selection
+endfunction
+
+command! -nargs=+ Qfdo call Qfdo(<q-args>)
+function! Qfdo(command)
+  let buffer_numbers = {}
+  for fixlist_entry in getqflist()
+    let buffer_numbers[fixlist_entry['bufnr']] = 1
+  endfor
+  let buffer_number_list = keys(buffer_numbers)
+
+  for num in buffer_number_list
+    try
+      silent exec 'buffer' num
+      exec a:command
+      update
+    catch
+      echo "Aborted."
+      return
+    endtry
+  endfor
+  echo "Done."
+endfunction
+
+command! -nargs=* -complete=file GS call GlobalReplace(<q-args>)
+function! GlobalReplace(args)
+  let args = split(a:args)
+  let substitute_pattern = args[0]
+  let paths = args[1:]
+  let separator = matchstr(substitute_pattern, '^.')
+  let search_pattern = split(substitute_pattern, separator, 1)[1]
+
+  call DoGrep(search_pattern, paths)
+  exec "Qfdo %S" . substitute_pattern
+endfunction
+
+function! DoGrep(search_pattern, paths)
+  let grep_command = exists(':Ggrep') ? "Ggrep " : "Ack! "
+  let cmd = grep_command . a:search_pattern . ' ' . join(a:paths, ' ')
+  echo cmd
+  silent exec cmd
+  copen
+  wincmd p
 endfunction
 
 "-------------------------------------------
