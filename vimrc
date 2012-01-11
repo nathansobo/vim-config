@@ -87,12 +87,12 @@ let mapleader=','
 
 " move up and down within wrapped lines
 noremap j gj
-noremap k gk
 
 " make Y consistent w/ D and C
+noremap k gk
 nmap Y y$
 
-" increase/decrease indentation
+" increase/decrease indentation in visual mode with tab/shift-tab
 xmap <TAB> >gv
 xmap <S-TAB> <gv
 
@@ -101,8 +101,8 @@ inoremap <C-Space> <C-n>
 inoremap <M-Space> <C-p>
 
 " clear the command line and search highlighting
-noremap <C-l>     :nohlsearch<CR><C-l>
-noremap <leader>/ :nohlsearch<CR><C-l>
+noremap <C-l>     :nohlsearch<CR>
+noremap <leader>/ :nohlsearch<CR>
 
 " copy current file path to system pasteboard.
 map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
@@ -230,6 +230,16 @@ function! DoGrep(search_pattern, paths)
   copen
   wincmd p
 endfunction
+
+" Compile coffeescript and put it in a vertical window
+map <leader>cs :CoffeeCompile vert<cr>
+
+" Kill trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+noremap <leader>ev :vsplit $MYVIMRC<cr>
+noremap <leader>sv :source $MYVIMRC<cr>
+noremap <leader>es :vsplit ~/.vim/snippets<cr>
 
 "-------------------------------------------
 "                 LOCAL CONFIG
