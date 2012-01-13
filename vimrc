@@ -234,8 +234,16 @@ endfunction
 " Compile coffeescript and put it in a vertical window
 map <leader>cs :CoffeeCompile vert<cr>
 
+
 " Kill trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+"
+function! KillTrailingWhitespace()
+  let winview = winsaveview()
+  exec ':%s/\s\+$//e'
+  call winrestview(winview)
+endfunction
+
+autocmd BufWritePre * :call KillTrailingWhitespace()
 
 noremap <leader>ev :vsplit $MYVIMRC<cr>
 noremap <leader>sv :source $MYVIMRC<cr>
